@@ -21,13 +21,13 @@ FIVE pin plug which is wired in a way that makes its orientation unambiguous.
 Connections to the ESP32
 =========================
 
-Rotary Encoder					Plug Pin         ESP32 Connection
---------------              	--------         ----------------
-Red Wire						Pin 1			+5V pin
-								Pin 2        	no connection  (orientation indicator)
-Black Wire						Pin 3			Ground pin
-White Wire (A-phase pulses)		Pin 4			GPIO pin for COUNT (default = 16)
-Green WIre (B-phase pulses)		Pin 5			GPIO pin for DIRECTION (default = 17)
+Rotary Encoder                  Plug Pin        ESP32 Connection
+--------------                  --------        ----------------
+Red Wire                        Pin 1			+5V pin
+								Pin 2           no connection  (orientation indicator)
+Black Wire                      Pin 3           Ground pin
+White Wire (A-phase pulses)     Pin 4           GPIO pin for COUNT (default = 16)
+Green WIre (B-phase pulses)     Pin 5           GPIO pin for DIRECTION (default = 17)
 
 In addition, a press-button switch is wired between Ground and a GPIO pin
 (default GPIO 5) to reset the count to zero at any time when the button is pressed
@@ -56,11 +56,11 @@ public:
 
 	// Constructor with alternative GPIO pin assignments
 	Goniometer(int cntPin, int dirPin, int resPin) {
-			count = 0;  // set goniometer count to zero at start
-			countPin = cntPin;
-			directionPin = dirPin;
-			resetPin = resPin;
-		}
+		count = 0;  // set goniometer count to zero at start
+		countPin = cntPin;
+		directionPin = dirPin;
+		resetPin = resPin;
+	}
 
 	// method to start the goniometer
 	void begin(){
@@ -78,10 +78,10 @@ public:
 
 	// interrupt service routine for countPin
 	static void isrPulseCount(void){
-	if(digitalRead(directionPin))
-				count--;
-			else
-				count++;
+		if(digitalRead(directionPin))
+			count--;
+		else
+			count++;
 	}
 
 	// interrupt service routine for resetPin
