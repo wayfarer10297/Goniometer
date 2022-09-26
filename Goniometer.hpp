@@ -24,7 +24,7 @@ Connections to the ESP32
 Rotary Encoder					Plug Pin         ESP32 Connection
 --------------              	--------         ----------------
 Red Wire						Pin 1			+5V pin
-xxxxxxxxxxxxxxxxxxxxxxxxxxx		Pin 2        	no connection.  (orientation indicator)
+								Pin 2        	no connection  (orientation indicator)
 Black Wire						Pin 3			Ground pin
 White Wire (A-phase pulses)		Pin 4			GPIO pin for COUNT (default = 16)
 Green WIre (B-phase pulses)		Pin 5			GPIO pin for DIRECTION (default = 17)
@@ -93,7 +93,7 @@ public:
 
 
 // define static variables used by the Goniometer class
-volatile long Goniometer::count; // define
+volatile long Goniometer::count;
 int Goniometer::countPin;
 int Goniometer::directionPin;
 int Goniometer::resetPin;
